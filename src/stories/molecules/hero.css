@@ -1,0 +1,373 @@
+.hero {
+    position: relative;
+    height: 100dvh;
+    background-color: var(--black);
+    margin-bottom: 80px;
+    display: grid;
+    padding-top:80px;
+    @media screen and (min-width:990px) {
+        padding-top: unset;
+        align-items: center;
+        height: 100vh;
+    }
+}
+
+.hero-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    margin: 0 24px;
+
+    @media screen and (min-width:990px) {
+        max-width: 1920px;
+        gap: 20px;
+        margin: 0 32px;
+    }
+
+}
+
+.hero-grid__content {
+    position: relative;
+}
+
+.hero--home {
+    padding-top: 0;
+    height: auto;
+    @media screen and (min-width: 990px) {
+     height: 100vh;
+    }
+    .hero-grid {
+        padding-top:32px;
+        grid-auto-rows:auto;
+
+        @media screen and (min-width:990px) {
+            grid-template-rows: auto;
+            padding-top: unset;
+        }
+    }
+    .hero-grid__content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        grid-column: 1 / -1;
+        grid-row: 1;
+
+        @media screen and (min-width:990px) {
+            grid-column: 1 / 6;
+        }
+
+        @media screen and (min-width:1200px) {
+            grid-column: 2 / 6;
+        }
+
+    }
+}
+
+
+.hero--faq {
+    background-position: center center;
+    background-size: cover;
+    background-image: url('../../assets/faq-fill-mobile.jpg');
+    background-position: center bottom;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to left top, rgba(0,0,0,0.9), transparent);
+    }
+
+    @media screen and (min-width: 990px) {
+        background-image: url('../../assets/faq-hero-fill.jpg');
+        background-position: center center;
+    }
+
+    .hero-grid__content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        grid-column: 1 / -1;
+
+        @media screen and (min-width:990px) {
+            grid-column: 1 / 8;
+        }
+
+        @media screen and (min-width:1280px) {
+            grid-column: 2 / 8;
+
+        }
+
+    }
+}
+
+.hero--faqs {}
+
+
+.hero--how-to-play {
+    height: auto;
+    padding-bottom: 80px;
+    background-image: url('../assets/how-to-play-hero.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+
+    &::before {
+        z-index: 0;
+        content: '';
+        width: 100vw;
+        height: 100dvh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to top right, rgba(0,0,0,0.5), transparent);
+    }
+
+    .hero-grid {
+        gap: 20px;
+    }
+    
+
+
+    &::after {
+        z-index: 0;
+        content: '';
+        width: 100vw;
+        height: 100dvh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+    }
+
+    @media screen and (min-width:990px) {
+        height: 100vh;
+        padding-bottom: unset;
+    }
+    .hero-grid__content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        grid-column: 1 / -1;
+        grid-row: 1;
+        position: relative;
+        z-index: 2;
+
+        @media screen and (min-width:990px) {
+            grid-column: 1 / 6;
+        }
+
+        @media screen and (min-width:1280px) {
+            grid-column: 2 / 6;
+
+        }
+
+        .hero-grid__arrow {
+            display: none;
+        }
+
+        @media screen and (min-width:990px) {
+
+        .hero-grid__arrow {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 40%;
+            z-index: 20;
+        }
+    }
+
+    }
+
+    .hero-grid__video {
+        position: relative;
+        z-index: 2;
+        grid-column: 1 / -1;
+        grid-row: 2;
+        @media screen and (min-width:990px) {
+            grid-column: 6 / -1;
+            grid-row: auto;
+        }
+
+        @media screen and (min-width:1280px) {
+            grid-column: 6 / -1;
+
+        }
+    }
+}
+
+/** Desktop Grid Cards **/
+.hero-grid__cards {
+    display: none;
+
+    @media screen and (min-width:990px) {
+     display: unset;
+    }
+
+    .dynamic-card {
+        background-color: var(--white);
+        transition: all 300ms ease;
+        border-radius: 1rem;
+        position: absolute;
+        border-radius: 24px;
+        width: 28%;
+        aspect-ratio: 400 / 293;
+        background-size: cover;
+        backface-visibility: hidden;
+        transform-origin: center center;
+
+        &::after {
+            content:'';
+            background-color: inherit;
+            transform: rotateY( 180deg );
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            border-radius: inherit;
+            opacity: 0;
+        }
+
+        &.flip {
+            &::after {
+                opacity: 1;
+            }
+        }
+
+        &:hover {
+            z-index: 10;
+            transform: rotate(0deg) !important;
+            filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.33));
+            cursor: pointer;
+        }
+    }
+
+    @media screen and (min-width:990px) {
+        
+    .dynamic-card--1 {
+        transform: rotate(15.128deg);
+        flex-shrink: 0;
+        left: 66%;
+        top: 35%;
+        z-index: 5;
+        background-color: var(--brand-dangerous);
+
+    }
+
+    .dynamic-card--2 {
+        transform: rotate(-22.498deg);
+        left: 76%;
+        top: 10%;
+        z-index: 4;
+        background-color: var(--brand-fun);
+
+    }
+
+    .dynamic-card--3 {
+        transform: rotate(-18deg);
+        left: 73%;
+        top: 47%;
+        z-index: 3;
+        background-color: var(--brand-risky);
+
+    }
+
+    .dynamic-card--4 {
+        transform: rotate(-15.138deg);
+        left: 47%;
+        top: 51%;
+        z-index: 2;
+        background-color: var(--brand-risky);
+
+    }
+
+    .dynamic-card--5 {
+        transform: rotate(14.532deg);
+        left: 50%;
+        top: 18%;
+        z-index: 1;
+        background-color: var(--brand-fun);
+
+    }
+
+}
+   
+}
+
+/** Mobile Grid Cards **/
+.mobile-cards {
+    width: 100%;
+    padding-top: 32px;
+    
+    @media screen and (min-width: 990px) {
+        display: none;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-4-20 15:8:54
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-bl
+ * ----------------------------------------
+ */
+  @keyframes slide-bl {
+    0% {
+        translate: 1000px -500px;
+    }
+    100% {
+    translate: 0 0 ;
+    }
+  }
+  
+
+  /* ----------------------------------------------
+ * Generated by Animista on 2024-4-20 15:18:39
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation roll-in-top
+ * ----------------------------------------
+ */
+@-webkit-keyframes roll-in-top {
+    0% {
+      -webkit-transform: translateY(-800px) rotate(-540deg);
+              transform: translateY(-800px) rotate(-540deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) rotate(0deg);
+              transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+  }
+  @keyframes roll-in-top {
+    0% {
+      -webkit-transform: translateY(-800px) rotate(-540deg);
+              transform: translateY(-800px) rotate(-540deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) rotate(15.13deg);
+              transform: translateY(0) rotate(15.13deg);
+      opacity: 1;
+    }
+  }
+  

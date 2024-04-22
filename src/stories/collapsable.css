@@ -1,0 +1,35 @@
+.collapsable {
+    border-bottom: 1px solid var(--black);   
+
+    summary {
+        list-style: none;
+        cursor: pointer;
+        transition: all 150ms ease;
+        padding: 1rem;
+
+        i {
+            transition: all var(--transition) ease;
+            font-size: var(--fs-lg);
+        }
+    }
+
+    &[open] summary {
+        margin-bottom: 1rem;
+    }
+
+    &[open] summary >  i {
+        rotate: 180deg;
+    }
+
+    div {
+        padding:0 1rem;
+    }
+}
+
+.collapsable--faq {
+    summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+}

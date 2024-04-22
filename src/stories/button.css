@@ -1,0 +1,101 @@
+.button {
+  display: inline-flex;
+  padding: 12px 18px;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  font-family: "Work Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  border-radius: 100px;
+  cursor: pointer;
+  appearance: none;
+  background-color: transparent;
+  color: var(--black);
+  border: none;
+  transition: all 140ms ease;
+  position: relative;
+  text-decoration: none;
+
+  &:hover {
+    translate: 0 -.25rem;
+    box-shadow: 0 .25rem 8px rgba(0,0,0, 0.15);
+  }
+
+  &:active {
+    &::after {
+      position: absolute;
+      content: '';
+      width: 110%;
+      height: 120%;
+      border-radius: inherit;
+      background-color: var(--brand-risky);
+      opacity: 0.3;
+      left: -5%;
+    }
+  }
+}
+
+.button--large {
+  font-size: 24px;
+}
+
+.button--medium {
+  font-size: 18px;
+}
+
+.button--small {
+  font-size: 14px;
+}
+
+.button--primary {
+  background-color: var(--brand-yellow);
+  color: var(--black);
+
+  &:active{
+    color: var(--black);
+    background-color: var(--brand-risky);
+  }
+}
+
+.button--secondary {
+  background-color: var(--black);
+  color: var(--white);
+
+  &:active {
+    color: var(--black);
+    background-color: var(--brand-risky);
+  }
+}
+
+.button--ghost {
+  background-color: transparent;
+  border: 2px solid var(--black);
+  color: var(--black);
+
+  &:active {
+    color: var(--black);
+    background-color: var(--brand-risky);
+    
+  }
+}
+
+.button--ghost--dark {
+  background-color: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+
+  &:active {
+    color: var(--black);
+    background-color: var(--brand-risky);
+    text-decoration: none;
+  }
+}
+
+.button-group {
+  display: flex;
+  gap: 24px;
+}

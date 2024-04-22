@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import '../../node_modules/font-awesome/css/font-awesome.min.css';
+@import '../../node_modules/animate.css/animate.min.css';
+
+.work-sans {
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+
+  body, html {
+    overflow-x: hidden;
+  }
+
+  :root {
+    font-family: "Work Sans", sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+     font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    --brand-yellow: #f6c421;
+    --brand-fun: #93AB3D;
+    --brand-risky: #E9B93F;
+    --brand-dangerous: #D62E27;
+    --white: #fff;
+    --black: #000;
+    --dark-grey: #1D1D1D;
+    --light-grey: #323232;
+    --border-radius: 24px;
+    --transition: 250ms;
+  }
+
+  .text-color--brand-yellow {
+    color: var(--brand-yellow);
+  }
+
+  .text-color--brand-fun {
+    color: var(--brand-fun);
+  }
+
+  .text-color--brand-risky {
+    color: var(--brand-risky);
+  }
+
+  .text-color--brand-dangerous {
+    color: var(--brand-dangerous);
+  }
+
+  .text-color--white {
+    color: var(--white);
+  }
+
+  .text-color--black {
+    color: var(--black);
+  }
+
+  .text-color--dark-grey {
+    color: var(--dark-grey);
+  }
+
+  .text-color--light-grey {
+    color: var(--light-grey);
+  }
+  
